@@ -13,7 +13,7 @@
     </p>
     <p id="server"></p>
     <script>
-        const wsConnect = ws('ws://ws.sevendragon.click');
+        const wsConnect = new WebSocket('ws://ws.sevendragon.click');
 
         const btn = document.querySelector('button');
         const clientInput = document.getElementById('client');
