@@ -26,7 +26,8 @@
             
         }
         wsConnect.onmessage = e => {
-            serverOutput.textContent = e.data
+            console.log(e.data);
+            serverOutput.textContent = e.data;
         }
     </script>
 </body>
