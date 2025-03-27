@@ -16,9 +16,10 @@ wss.on("connection", function connection(ws) {
 
   ws.on("message", function message(data) {
     console.log("received: %s", data);
+    ws.send("server sent" + data);
   });
 
-  ws.send("server sent" + data);
+  
 });
 
 server.listen(8080);
