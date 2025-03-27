@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>client</p><input type="text" id="client">
+    <button>Send</button>
+    <p>
+        server
+    </p>
+    <p id="server"></p>
+    <script>
+        const wsConnect = ws('ws://ws.sevendragon.click');
+
+        const btn = document.querySelector('button');
+        const clientInput = document.getElementById('client');
+        const serverOutput = document.getElementById('server');
+        btn.addEventListener('click', () => {
+            wsConnect.send(clientInput.value)
+        }) 
+        wsConnect.onopen = e => {
+            console.log("Connected to server");
+            
+        }
+        wsConnect.onmessage = e => {
+            serverOutput.textContent = e.data
+        }
+    </script>
+</body>
+</html>
