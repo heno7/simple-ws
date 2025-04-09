@@ -8,7 +8,7 @@ on:
 jobs:
   hello:
     name: hello
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     steps:
       - name: echo
